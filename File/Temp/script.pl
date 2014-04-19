@@ -30,5 +30,12 @@ print $tmp_file_will_be_deleted "some content of tempfile\nthat will be deleted\
 
 print "reading file:\n" . read_file($tmp_file_will_be_deleted->filename);
 
+# ---
+
+my $temp_dir_name = tempdir( CLEANUP => 1 );
+
+print "Temp Dir: $temp_dir_name\n";
+
+
 # Sleeping, so that the existence of the file can be checked.
 sleep 20;
