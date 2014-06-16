@@ -7,6 +7,12 @@ use Path::Tiny;
 my $file_myself = path($0);
 
 
+print "\nbasename()\n";
+  #
+  #   Compare File::Basename
+  #
+  print "  ", $file_myself -> basename, "\n";
+
 print "\ncanonpath()\n";
   print "  parent: ", $file_myself -> parent -> canonpath    , "\n";
   print "  ../..:  ", path($0 . '/../..')    -> canonpath    , "\n";
