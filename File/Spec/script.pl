@@ -18,6 +18,7 @@ print "------\n";
 
 print "\n" . File::Spec->catdir(     '..', '..');
 print "\n" . File::Spec->catdir(cwd, '..', '..');
+print "\n" . File::Spec->catdir($0 , '..'      );
 print "\n\n"                           ;
 
 print "catfile\n";
