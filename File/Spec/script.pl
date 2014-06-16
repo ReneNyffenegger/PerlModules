@@ -10,12 +10,14 @@ print "---------\n";
 
 print "\n" .                       cwd ;
 print "\n" . File::Spec->canonpath(cwd);
+print "\n" . File::Spec->canonpath(cwd . '/../..');
 print "\n\n"                           ;
 
 print "catdir\n";
 print "------\n";
 
-print "\n" . File::Spec->catdir('..', '..');
+print "\n" . File::Spec->catdir(     '..', '..');
+print "\n" . File::Spec->catdir(cwd, '..', '..');
 print "\n\n"                           ;
 
 print "catfile\n";
