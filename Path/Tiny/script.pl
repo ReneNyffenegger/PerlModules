@@ -7,6 +7,10 @@ use Path::Tiny;
 my $file_myself = path($0);
 
 
+print "\nabsolute()\n";
+  print "  parent: ", $file_myself -> parent -> absolute     , "\n";
+  print "  ../..:  ", path($0 . '/../..')    -> absolute     , "\n";
+
 print "\nbasename()\n";
   #
   #   Compare File::Basename
