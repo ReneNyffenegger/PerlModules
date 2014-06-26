@@ -65,6 +65,10 @@ sub handle_request { # {{{
       serve_file (".$path", 'image/png');
       return;
     }
+    if ($path =~ /\.jpg$/ or $path =~ /\.jpeg/) {
+      serve_file (".$path", 'image/jpeg');
+      return;
+    }
     if ($path =~ /\.ico$/) {
       serve_file (".$path", 'image/x-icon');
       return;
