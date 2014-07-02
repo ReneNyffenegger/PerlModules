@@ -5,20 +5,25 @@ use pQuery;
 
 my $html=<<"END"; # {{{
 
-  <html>
+<html>
+  <head>
+    <style type="text/css">
+      * {font-family: Courier}
+    </style>
+  </head>
+  <body>
 
     <div> aaa </div>
 
     <div> <div> bbb </div> </div>
 
     <p> ccc </p>
-
   </html>
+</html>
 
 
 END
 # }}}
-
 
 my $p = pQuery($html);
 
@@ -28,4 +33,6 @@ $p -> find('div')->each(sub {
 });
 
 print $p -> find('div')->eq(2) -> text;
+
+print "style: ", $p -> find('style')->text;
 
