@@ -22,7 +22,7 @@ print "\n" . File::Spec->catdir($0 , '..'      );
 print "\n\n"                           ;
 
 print "catfile\n";
-print "------\n";
+print "-------\n";
 
 print "\n" . File::Spec->catfile('..', '..', 'file.txt');
 print "\n\n"                           ;
@@ -37,6 +37,12 @@ print "devnull\n";
 print "-------\n";
 
 print "\n" . File::Spec->devnull       ;
+print "\n\n"                           ;
+
+print "rel2abs\n";
+print "-------\n";
+
+print "\n" . File::Spec->rel2abs('.')  ;
 print "\n\n"                           ;
 
 print "rootdir\n";
