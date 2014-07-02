@@ -19,14 +19,13 @@ my $html=<<"END"; # {{{
 
     <p> ccc </p>
 
-    <table>
+    <table summary='Note how the summary will appear in double quotes'>
       <tr><td>a</td><td>b</td></tr>
       <tr><td>c</td><td>d</td></tr>
     </table>
 
   </html>
 </html>
-
 
 END
 # }}}
