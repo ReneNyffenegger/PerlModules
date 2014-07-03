@@ -9,4 +9,5 @@ printf "atan(100000) = %7.6f\n",     atan(100000);
 
 print "\n";
 
-print  "start of epoch: ", strftime ('%H:%M:%S %d.%m.%Y', gmtime(0)), "\n";
+print  "start of epoch: ", strftime ('%H:%M:%S %d.%m.%Y', gmtime   (0)), "\n";
+print  "now:          : ", strftime ('%H:%M:%S %d.%m.%Y', localtime( )), "\n";
