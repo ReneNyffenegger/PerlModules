@@ -5,7 +5,13 @@ use pQuery;
 
 my $html=<<"END"; # {{{
 
-  <html>
+<html>
+  <head>
+    <style type="text/css">
+      * {font-family: Courier}
+    </style>
+  </head>
+  <body>
 
     <div> aaa </div>
 
@@ -13,12 +19,16 @@ my $html=<<"END"; # {{{
 
     <p> ccc </p>
 
-  </html>
+    <table summary='Note how the summary will appear in double quotes'>
+      <tr><td>a</td><td>b</td></tr>
+      <tr><td>c</td><td>d</td></tr>
+    </table>
 
+  </html>
+</html>
 
 END
 # }}}
-
 
 my $p = pQuery($html);
 
@@ -28,4 +38,10 @@ $p -> find('div')->each(sub {
 });
 
 print $p -> find('div')->eq(2) -> text;
+
+print "style: ", $p -> find('style')->text, "\n";
+
+# Note: with ...->html, the enclosing <table>..</table> elements wouldn't
+#       be printed:
+print "table: ", $p -> find('table')->toHtml;      
 
