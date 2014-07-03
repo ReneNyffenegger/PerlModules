@@ -31,6 +31,10 @@ atan_atan2_test(  13 / 16 * 2 * pi);
 atan_atan2_test(  14 / 16 * 2 * pi);
 atan_atan2_test(  15 / 16 * 2 * pi);
 
+print "------------------\n";
+
+printf "asin(pi) = %7.6f  |  acos(0) = %7.6f  |  pi/2=%7.6f\n", asin(pi), acos(0), pi/2;
+
 
 sub atan_atan2_test {
 
