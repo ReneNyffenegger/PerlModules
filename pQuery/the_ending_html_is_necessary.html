@@ -1,0 +1,26 @@
+use warnings;
+use strict;
+
+use pQuery;
+
+my $html=<<"END"; # {{{
+<html>
+
+<head>
+</head>
+
+
+<body>
+
+<table>
+  <tr><td>a</td></tr>
+</table>
+</body>
+
+END
+# }}}
+
+
+my $p = pQuery($html);
+
+print "table: ", $p -> find('table')->toHtml;      
