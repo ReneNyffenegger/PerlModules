@@ -37,9 +37,3 @@ printf  (  ("%s\n" x 5),                        # Note the time zone influence !
 #  Date::Parse can be used to convert these string representations back:
 
 printf "\nUsing Date::Parse: %d\n", Date::Parse::str2time(  ctime( 1234567890 )  );  # prints 1234567890
-
-
-
-
-
-
