@@ -4,7 +4,7 @@ use strict;
 use Time::localtime;
 use Date::Calc;
 
-printf("\n   %2d:%2d:%2d %2d.%02d.%4d (%s)\n",
+printf("\nNow, it is   %02d:%02d:%02d %2d.%02d.%4d  (%s)\n",
         localtime -> hour,
         localtime -> min,
         localtime -> sec,
