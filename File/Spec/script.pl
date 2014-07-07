@@ -54,7 +54,7 @@ print "\n\n"                           ;
 print "tmpdir\n";
 print "------\n";
 
-print "\n" . File::Spec->tmpdir        ;
+print "\n" . File::Spec->tmpdir        ;   #  See also File::Temp
 print "\n\n"                           ;
 
 print "updir\n";
