@@ -3,4 +3,4 @@ use strict;
 
 use Sys::Hostname;
 
-printf "Name of host: %s\n", hostname;
+printf "Name of host: %s\n", hostname; # Compare with  "use Config; print $Config{aphostname}"
