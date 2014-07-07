@@ -1,3 +1,7 @@
+#
+#   TODO: Exclude .git directory when creating the
+#   zip file.
+#
 use warnings;
 use strict;
 
@@ -6,16 +10,22 @@ use File::Spec::Functions 'tmpdir';
 use File::Basename;
 
 
-my $dest_file = tmpdir() . 'io-compress.zip';
 
+my $dest_file = tmpdir() . '\archive.zip';
 my $zip = Archive::Zip -> new;
+# print dirname($0), "\n";
 
-print dirname($0), "\n";
+my $directory_to_zip = File::Spec->catdir($0, '../../..');
 
-$zip -> addTree (dirname($0), 'subdir');
+# print "directory_to_zip: $directory_to_zip\n";
 
-$zip -> addString('twenty-two', '42.txt');
+$zip -> addTree ($directory_to_zip, '');
+
+# Create a file «42.txt» that does not exist in the
+# directory $directory_to_zip.
+$zip -> addString('twenty-two', '42.txt');  # Creat
 
 $zip -> writeToFileNamed ($dest_file) == AZ_OK or die "Could not write $dest_file";
 
-print "$dest_file written";
+print "\n$dest_file written\n";
+print "Now, use ../Extract/script (Archive::Extract) to unzip again.\n";
