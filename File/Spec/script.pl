@@ -21,6 +21,7 @@ print "---------\n";
 print "\n" .                       cwd ;
 print "\n" . File::Spec->canonpath(cwd);
 print "\n" . File::Spec->canonpath(cwd . '/../..');
+print "\n" . File::Spec->canonpath(cwd . '/../../README.md');
 print "\n\n"                           ;
 
 print "catdir\n";
