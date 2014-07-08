@@ -37,7 +37,7 @@ printf "is_root:    %d\n", $os_info -> is_root;
 
 print "\n";
 printf "cd_key:     %d\n", $os_info -> cdkey;
-printf "locale:     %d\n", $os_info -> locale;
+printf "locale:     %s\n", $os_info -> locale;
 
 print "\n";
 my %meta = $os_info->meta;
