@@ -23,7 +23,7 @@ printf "IP:         %s\n", $os_info -> ip;
 print "\n";
 printf "bitness:    %d\n", $os_info -> bitness;
 
-print "\n";
+print "\n";   # Operation system. Compare with $^O
 printf "is_windows: %d\n", $os_info -> is_windows;
 printf "is_winnt:   %d\n", $os_info -> is_winnt;
 printf "is_win95:   %d\n", $os_info -> is_win95;
