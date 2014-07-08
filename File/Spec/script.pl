@@ -61,6 +61,15 @@ print "-------\n";
 print "\n" . File::Spec->rootdir       ;
 print "\n\n"                           ;
 
+print "splitpath\n";  # See also fileparse() in File::Basename.
+print "---------\n";
+
+my ($drive, $path, $file) = File::Spec->splitpath($0);
+print "\n" . $drive;
+print "\n" . $path;
+print "\n" . $file;
+print "\n\n"                           ;
+
 print "tmpdir\n";
 print "------\n";
 

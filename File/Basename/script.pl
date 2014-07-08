@@ -1,4 +1,8 @@
-use warnings; use strict;
+#
+#   Compare fileparse() with File::Spec->splitpath
+#
+use warnings;
+use strict;
 
 use File::Basename;
 
