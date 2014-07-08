@@ -24,4 +24,4 @@ Email::Stuffer ->
                  sasl_username    => $sender_mail_address, # ?
                  sasl_password    => $auth_passwd })
              )
-->send;
+->send or die "sending of mail failed $!";
