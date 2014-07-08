@@ -4,6 +4,16 @@ use File::Spec;
 
 use Cwd;
 
+print "abs2rel\n";
+print "-------\n";
+
+       my $path_up_up = File::Spec->canonpath(cwd . '/../..');
+       my $base       = File::Spec->canonpath($path_up_up . '/..');
+
+print "\n" . File::Spec->abs2rel( $path_up_up        );
+print "\n" . File::Spec->abs2rel( $path_up_up, $base );
+
+print "\n\n"                           ;
 
 print "canonpath\n";
 print "---------\n";
