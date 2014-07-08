@@ -30,13 +30,14 @@ printf "is_win95:   %d\n", $os_info -> is_win95;
 printf "is_linux:   %d\n", $os_info -> is_linux;
 printf "is_bsd:     %d\n", $os_info -> is_bsd;
 printf "is_unknown: %d\n", $os_info -> is_unknown;
+printf "\$^O:        %s\n",$^O;
 
 
 print "\n";
 printf "is_root:    %d\n", $os_info -> is_root;
 
 print "\n";
-printf "cd_key:     %d\n", $os_info -> cdkey;
+printf "cd_key:     %d\n", $os_info -> cdkey;    # TODO: Missing argument in printf.
 printf "locale:     %s\n", $os_info -> locale;
 
 print "\n";
