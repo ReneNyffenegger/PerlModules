@@ -3,6 +3,11 @@ use warnings;
 
 use Date::Manip;
 
+#
+
+no warnings 'once';
+$main::TZ= 'GMT';
+
 #                          # Prints something like
 parse_date('today'     );  # 2012102500:00:00 (on Oct 25th 2012).
 parse_date('yesterday' );  # 2012102400:00:00 (on Oct 25th 2012).
