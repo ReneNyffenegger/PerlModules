@@ -10,8 +10,9 @@ use Getopt::Long;
 my $default_value='DEF';
 my $override = $default_value;
 
-GetOptions('override=s' => \$override);
-
+# The equal sign between override and s indicates that the option requires a value (if
+# the option IS used). Compare with ./optional_value.pl
+GetOptions('override=s' => \$override); 
 print "\n";
 
 if ($override eq $default_value) {
