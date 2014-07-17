@@ -28,3 +28,9 @@ print "You pressed $key\n";
 
 $key = ReadKey($wait_2_secs);
 print "You pressed $key\n";
+
+# Not available on windows
+#
+# print "Now, enter a line\n";
+# my $line = ReadLine 0;
+# print "The line is: $line\n";
