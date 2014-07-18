@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Tables for HTML::TableExtract</title>
+</head>
+<body>
+
+<p>Hello</p>
+<p>More Hello</p>
+
+<table summary='sum sum sum' border=1><!--{{{-->
+
+  <tr><td          > more   </td><td> Col  2 </td><td          > Col 3  </td></tr>
+  <tr><td          > Bla    </td><td> Head 2 </td><td rowspan=3> Head 3 </td></tr>
+  <tr><td rowspan=2> Val 1  </td><td> Val 2                             </td></tr>
+  <tr>                           <td> Foo 2                             </td></tr>
+  <tr><td colspan=3> Bar 1                                              </td></tr>
+  <tr><td>           Baz 1  </td><td> Baz 2  </td><td          > Baz 3  </td></tr>
+
+</table><!--}}}-->
+
+<p>Another table</p>
+
+<table summary='sum sum sum'  border=1><!--{{{-->
+
+  <tr><td>Head 1</td><td>Head 2</td><td>Head 3</td></tr>
+  <tr><td>
+
+         <table summary='abc' border=1><!--{{{-->
+             <tr><td>Head 1</td><td>Head 2</td><td>Head 3</td></tr>
+             <tr><td>Inner 1 </td><td>Inner 2 </td><td>Inner 3 </td></tr>
+             <tr><td>Inner a </td><td>Inner b </td><td>Inner c </td></tr>
+         </table><!--}}}-->
+
+     </td>
+      <td>qqqqq</td>
+      <td>rrrrr</td>
+      
+   </tr>
+</table><!--}}}-->
+
+<p>New Table</p>
+
+
+
+</body>
+</html>
+
