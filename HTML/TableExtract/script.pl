@@ -16,7 +16,7 @@ foreach my $table ( $te->tables ) {
     print "\n\n\nTable (", join(',', $table->coords), "):\n-----------\n";   # (0,0)
 
     foreach my $row ($table->rows) {
-      printf (("%-10s " x (@$row)) . "\n", map { $_ = trim $_; $_ ||= '-'; } @$row);
+      printf (("%-30s " x (@$row)) . "\n", map { $_ = trim $_; $_ //= '-'; substr($_, 0, 30); } @$row);
     }
 
 }
