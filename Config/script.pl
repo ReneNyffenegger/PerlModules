@@ -9,4 +9,4 @@ printf "Byte Order:    %s\n", $Config{byteorder};
 printf "cat:           %s\n", $Config{cat};
 printf "ccname:        %s\n", $Config{ccname};
 printf "Hostname:      %s\n", $Config{aphostname};           # compare with Sys::Hostname
-printf "osname:        %s\n", $Config{osname};               # compare with $^O (https://github.com/ReneNyffenegger/about-perl/blob/master/variables/%5EO__platform.pl)
+printf "osname:        %s\n", $Config{osname};               # compare with Sys::Info::OS and $^O (https://github.com/ReneNyffenegger/about-perl/blob/master/variables/%5EO__platform.pl)
