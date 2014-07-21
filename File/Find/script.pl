@@ -16,7 +16,7 @@ sub file_find_callback { # {{{
     print "\$File::Find::dir   $File::Find::dir \n";
     print "\$File::Find::name  $File::Find::name\n";
     print "\$_                 $_\n";
-    print "rel2abs            ". File::Spec -> abs2rel($File::Find::name, $root_dir), "\n";
+    print "relative path      ". File::Spec -> abs2rel($File::Find::name, $root_dir), "\n";
 
     print "\n";
     
