@@ -1,22 +1,23 @@
 use warnings; use strict;
 
 use IO::Socket::INET;
-
 use threads;
+
+my $port_listen = 2808;
 
 $| = 1; # Autoflush
 
 my $socket = new IO::Socket::INET (
 
   LocalHost   => '0.0.0.0',
-  LocalPort   => '2808',
+  LocalPort   =>  $port_listen,
   Proto       => 'tcp',
   Listen      =>  5,
   Reuse       =>  1
 
 ) or die "Cannot create socket";
 
-print "Waiting for echo-client.pl to connect\n";
+print "Waiting for tcp connect to connet on port $port_listen (see echo-client.pl)\n";
 
 while (1) {
 
