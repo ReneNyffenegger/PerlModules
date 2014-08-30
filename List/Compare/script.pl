@@ -16,11 +16,20 @@ print join "\n  ", $c->get_intersection;
 #  one
 #  four
 
-print "\nget_union  ";
+print "\nget_union\n  ";
 print join "\n  ", $c->get_union;
-#  three
-#  baz
-#  one
-#  foo
 #  two
 #  four
+#  one
+#  bar
+#  foo
+#  baz
+#  three
+
+print "\nget_unique\n  ";  # Elements only in first list
+print join "\n  ", $c->get_unique;
+#  foo
+
+print "\nget_complement\n  ";  # Elements only in second list
+print join "\n  ", $c->get_complement;
+#  two
