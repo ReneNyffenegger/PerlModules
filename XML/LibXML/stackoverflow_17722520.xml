@@ -1,0 +1,23 @@
+<pathway 
+  name="path:ko00010" 
+  org="ko" 
+  number="00010"
+  title="Glycolysis / Gluconeogenesis"
+  image="http://www.kegg.jp/kegg/pathway/ko/ko00010.png"
+  link="http://www.kegg.jp/kegg-bin/show_pathway?ko00010">
+
+   <entry 
+     id="13" 
+     name="ko:K01623 ko:K01624 ko:K01622 ko:K11645 ko:K16305 ko:K16306" 
+     type="ortholog" 
+     reaction="rn:R01070"
+     link="http://www.kegg.jp/dbget-bin/www_bget?K01623+K01624+K01622+K11645+K16305+K16306">
+
+            <graphics 
+               name="K01623..." 
+               fgcolor="#000000" 
+               bgcolor="#BFBFFF"
+               type="rectangle" x="483" y="404" width="46" height="17"/>
+   </entry>
+
+</pathway>
