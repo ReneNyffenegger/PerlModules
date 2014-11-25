@@ -28,6 +28,8 @@ while ($sth -> fetch) {
   printf "%2i %20s\n", $id, $tx;
 }
 
+$sth -> finish;
+
 # ---
 
 $dbh -> do ("drop table tq84_dbi_oracle_table");
