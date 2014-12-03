@@ -1,3 +1,6 @@
+#
+#   See also https://github.com/ReneNyffenegger/about-perl/blob/master/functions/stat.pl
+#
 use warnings;
 use strict;
 
