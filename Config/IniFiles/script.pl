@@ -3,6 +3,8 @@ use strict;
 
 use Config::IniFiles;
 
-my $ini = Config::IniFiles->new( -file => 'configfile.ini' ) or die;
+use File::Basename;
+
+my $ini = Config::IniFiles->new( -file => dirname($0) . '/configfile.ini' ) or die;
 
 print $ini->val('foo', 'val1');
