@@ -8,6 +8,8 @@ use File::Basename;
 
 read_config dirname($0) . '/script_config.ini' => my %cfg;
 
+say $cfg{''         }{'key-1'     };
+
 say $cfg{'Section A'}{'key-1'     };
 say $cfg{'Section A'}{'equal-sign'};
 
