@@ -1,7 +1,7 @@
 use warnings;
 use strict;
 
-use YAML;
+use YAML::XS;
 
 my $var = {
    
@@ -9,7 +9,7 @@ my $var = {
     h => { 'key 1' => 'aaa', 'key 2' => 'bbb', 'key 3' => 'ccc'}
 };
 
-print Dump $var; # compare with Dump of YAML::XS
+print Dump $var; # compare with Dump of YAML
 
 __END__
 h:
