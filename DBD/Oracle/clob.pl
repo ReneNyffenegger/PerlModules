@@ -36,6 +36,7 @@ sub insert_data { # {{{
 #
     $sth -> execute;
 
+#   setting ora_auto_lob to false: fetch the «LOB Locator» instead of the CLOB (or BLOB) content:
     my $c = $dbh -> selectrow_array("select c from tq84_lob where id = 1 for update", {ora_auto_lob => 0});
 
     $dbh -> ora_lob_write(
@@ -49,6 +50,7 @@ sub insert_data { # {{{
 
 sub select_data { # {{{
 
+#   setting ora_auto_lob to false: fetch the «LOB Locator» instead of the CLOB (or BLOB) content:
     my $c = $dbh -> selectrow_array("select c from tq84_lob where id = 1", {ora_auto_lob => 0});
 
     my $count = 0;
