@@ -16,7 +16,7 @@ my $p = new HTML::Parser (
 
 my $indent_ = 0;
  
-$p->parse_file("test_01.html") or die;
+$p->parse_file("../test_01.html") or die;
 
 sub text {
     my ($text) = @_;
