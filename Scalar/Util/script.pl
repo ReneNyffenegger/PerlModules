@@ -16,6 +16,7 @@ for my $uncertain (
       40.5,             # yes
      "000047",          # yes
      -55.49,            # yes
+     "   -72.3 ",       # yes
      "  - 63.1 ",       # no
      "20e3",            # yes
      "  20e3  ",        # yes
