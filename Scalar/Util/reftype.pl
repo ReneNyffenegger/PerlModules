@@ -1,3 +1,6 @@
+#
+#   Compare with ref() : ( https://github.com/ReneNyffenegger/about-perl/blob/master/functions/ref.pl )
+#
 use warnings;
 use strict;
 use feature 'say';
