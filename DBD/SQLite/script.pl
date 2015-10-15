@@ -7,6 +7,8 @@ my $dbh = DBI->connect('dbi:SQLite:dbname=the.db') or die "Could not create the.
 
 $dbh -> do ('create table foo (col_1 number, col_2 varchar)');
 
+$dbh -> begin_work;
+
 # Inserting values
 # ----------------
 
@@ -28,5 +30,6 @@ while (my @r = $sth -> fetchrow_array) {
   printf ("%2d %s\n", @r);
 }
 
-$dbh -> disconnect;
+$dbh -> commit;
 
+$dbh -> disconnect;
