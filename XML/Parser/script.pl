@@ -3,7 +3,7 @@ use warnings;
 
 use XML::Parser;
 
-my $xml_file_name = 'test.xml';
+my $xml_file_name = shift || 'test.xml';
 
 open my $xml_file_h, '<', $xml_file_name;
 

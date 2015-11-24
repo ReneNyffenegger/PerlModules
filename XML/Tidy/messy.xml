@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <root>
+<foo attr1="foo"
+attr2=
+"bar"
+   > 
+   <bar>hello
+ </bar>
+     </foo>   <foo attr1="xyz"
+attr2="one"> 
+   <baz>
+hello, world
+ </baz></foo>
+    </root>

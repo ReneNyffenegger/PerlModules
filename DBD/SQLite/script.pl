@@ -5,7 +5,20 @@ use DBI;
 
 my $dbh = DBI->connect('dbi:SQLite:dbname=the.db') or die "Could not create the.db";
 
-$dbh -> do ('create table foo (col_1 number, col_2 varchar)');
+#
+#   Check, if table already exists:
+#
+my ($table_exists) = $dbh->selectrow_array ("select 1 from sqlite_master where type='table' and name='foo'");
+if ($table_exists) {
+  print "Table foo already exists\n";
+}
+else {
+  print "Creating table foo\n";
+  $dbh -> do ('create table foo (col_1 number, col_2 varchar)');
+}
+
+
+$dbh -> begin_work;
 
 # Inserting values
 # ----------------
@@ -28,5 +41,6 @@ while (my @r = $sth -> fetchrow_array) {
   printf ("%2d %s\n", @r);
 }
 
-$dbh -> disconnect;
+$dbh -> commit;
 
+$dbh -> disconnect;
