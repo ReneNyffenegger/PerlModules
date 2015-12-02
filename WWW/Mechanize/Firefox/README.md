@@ -10,5 +10,5 @@ Verbindung verweigerte. at C:/strawberry/perl/site/lib/MozRepl/Client.pm line
 ## Links
 
 The [WebAutomation](https://github.com/ReneNyffenegger/WebAutomation) repository and its directory
-The [WWW-Mechanize-Firefox](https://github.com/ReneNyffenegger/WebAutomation/WWW-Mechanize-Firefox).
+The [WWW-Mechanize-Firefox](https://github.com/ReneNyffenegger/WebAutomation/tree/master/WWW-Mechanize-Firefox).
 
