@@ -1,3 +1,5 @@
+# WWW::Mechanize::Firefox
+
 Firefox needs the [MozRepl](https://addons.mozilla.org/de/firefox/addon/mozrepl/) add-on to work with
 WWW::Mechanize::Firefox.
 
@@ -15,7 +17,7 @@ Doug Miles [Browser Automation with WWW::Mechanize::Firefox ](https://www.youtub
   - Figuring out xpath expressions: Use Firebug, selected node and copy expression into
     clipboard.
 
-Waiting for an element to «be there» (24:00)
+### Waiting for an element to «be there» (24:00)
 
     for (1 .. 60) { # 60: Wait max 1 minute.
 
