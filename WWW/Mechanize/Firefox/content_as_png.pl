@@ -12,15 +12,6 @@ my $mech = WWW::Mechanize::Firefox->new(
 
 $mech->get_local('content_as_png.html');
 
-# my $png_1 = $mech->content_as_png(undef,undef,
-#     {
-#         width  => 2000,
-#         height => 2000,
-#         scalex => 1,
-#         scaley => 1
-#     }
-# );
-
 write_png ('', 
   $mech->content_as_png(undef,undef, {
     }
