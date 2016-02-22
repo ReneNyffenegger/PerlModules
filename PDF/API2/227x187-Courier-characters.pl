@@ -47,7 +47,7 @@ sub char {
   my $txt_char = $page->text;
 
   $txt_char->font($courier_new, 4.5/pt );
-  $txt_char->translate( $x * $w/227, $h - $y*$h/187);
+  $txt_char->translate( $x * $w/227, $h - $y*$h/187-4.5/pt);
   $txt_char->fillcolor($color);
   $txt_char->text($char);
 
