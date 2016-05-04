@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 use warnings;
 use strict;
 
@@ -13,4 +14,3 @@ printf("Latin-1: %s\n", unpack('H*', $auml));
 
 print "\n\nSupported encodings:\n  ";
 print join "\n  ", Encode->encodings(':all'); # supported encodings
-
