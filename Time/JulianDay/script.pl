@@ -4,10 +4,11 @@ use strict;
 
 use Time::JulianDay;
 
+# Dates are specified in the proleptic Gregorian calendar.
 printf "July      20,  2016: %7d\n", julian_day( 2016,  6, 20);
 
 printf "October   15,  1582: %7d\n", julian_day( 1582, 10, 15);
-printf "October   14,  1582: %7d\n", julian_day( 1582, 10, 14);  # Wrong with Oct 14, 1582 and earlier?
+printf "October   14,  1582: %7d\n", julian_day( 1582, 10, 14); # Note, October 14th 1582 does not exist in the Gregorian calendar.
 printf "October    4,  1582: %7d\n", julian_day( 1582, 10,  4);
 
 printf "January    1, -4712: %7d\n", julian_day(-4712,  1,  1);
