@@ -13,8 +13,8 @@ find(\&file_find_callback, $root_dir);
 
 sub file_find_callback { # {{{
 
-    print "\$File::Find::dir   $File::Find::dir \n"; # Relative path from $root_dir to directory containing file
-    print "\$File::Find::name  $File::Find::name\n"; # Relative path from $root_dir to file
+    print "\$File::Find::dir   $File::Find::dir \n"; # directory containing file
+    print "\$File::Find::name  $File::Find::name\n"; # path of file
     print "\$_                 $_\n";                # Name of the file (without path information)
     print "relative path      ". File::Spec -> abs2rel($File::Find::name, $root_dir), "\n";
 
