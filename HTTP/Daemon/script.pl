@@ -1,20 +1,19 @@
+#!/usr/bin/perl
 use warnings;
 use strict;
 
 use HTTP::Daemon;
 use HTTP::Status;
 
-my $daemon = HTTP::Daemon->new || die;
+my $daemon = HTTP::Daemon->new or die;
 
 printf "\n\n   URL of webserver is %s\n", $daemon -> url;
 
-while (my $client_connection = $daemon->accept) { # {{{
-
-
+while (my $client_connection = $daemon->accept) { # {
     new_connection($client_connection);
-} # }}}
+} # }
 
-sub new_connection { # {{{
+sub new_connection { # {
     my $client_connection = shift;
     printf "new connection\n";
     while (my $request = $client_connection->get_request) {
@@ -28,4 +27,4 @@ sub new_connection { # {{{
         }
     }
     $client_connection->close;
-} # }}}
+} # }
