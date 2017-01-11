@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 use warnings; use strict;
 
 use HTTP::Server::Simple::CGI;
@@ -7,6 +8,12 @@ use HTTP::Server::Simple::CGI;
 use File::Slurp; # import read_file
 
 my $nl = "\x0d\x0a";
+
+my $root = '.';
+if (@ARGV) {
+  $root = shift;
+}
+chdir($root);
 
 sub print_header { # {{{
 
@@ -24,7 +31,15 @@ sub serve_file { # {{{
 
     print_header($content_type);
 
-    print read_file($path_relative, binmode => ":raw");
+    print STDOUT "serve_file: $path_relative\n";
+
+    if (-e $path_relative) {
+       print read_file($path_relative, binmode => ":raw");
+    }
+    else {
+       print "file $path_relative not found"; 
+    }
+
 
 } # }}}
 
@@ -35,13 +50,15 @@ sub handle_request { # {{{
 
     my $path = $cgi -> path_info;
 
-#   print STDERR "$path\n";
-
     if ($path eq '/') {
-      serve_file ("index.html", 'text/html');
+      if (-e 'index.html') {
+        serve_file ("index.html", 'text/html');
+      }
+      else {
+        print join "\n", glob('*');
+      }
       return;
     }
-
 
   #  See http://de.selfhtml.org/diverses/mimetypen.htm for Mime Types.
 
@@ -85,4 +102,3 @@ sub handle_request { # {{{
 
 # Use Port 8080 (http://localhost:8080)
 my $pid = WebServer -> new(8080) -> background;
-
