@@ -7,7 +7,7 @@ use HTTP::Status;
 
 my $daemon = HTTP::Daemon->new or die;
 
-printf "\n\n   URL of webserver is %s\n", $daemon -> url;
+printf ("\n\n   URL of webserver is %s, show this script with %smyself\n", $daemon->url, $daemon->url);
 
 while (my $client_connection = $daemon->accept) { # {
     new_connection($client_connection);
