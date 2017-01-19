@@ -4,7 +4,7 @@ use strict;
 
 use Parse::HTTP::UserAgent;
 
-open (my $user_agent_strings_h, '<', '../../../_additional_files_/User-Agent-Strings') or die
+open (my $user_agent_strings_h, '<', '../../../_additional_files_/UserAgentStrings') or die
 my %seen;
 while (my $agent = <$user_agent_strings_h>) {
   chomp $agent;
