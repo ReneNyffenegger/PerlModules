@@ -5,7 +5,7 @@ use strict;
 use Getopt::Long;
 use DBI;
 
-my $db = 'autocommit.db';
+my $db = 'AutoCommit.db';
 
 Getopt::Long::GetOptions(
     "new-db"               => \my $new_db,
