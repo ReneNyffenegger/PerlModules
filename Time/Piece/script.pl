@@ -17,11 +17,18 @@ say "Hours between: ", $t_ -> hours;
 
 # ---------------------------------
 
-$t1 = Time::Piece -> strptime('1970-01-01 00:00:00', '%Y-%m-%d %H:%M:%S');
-$t2 = Time::Piece -> strptime('2017-01-24 15:48:25', '%Y-%m-%d %H:%M:%S');
+my $t_1970 = Time::Piece -> strptime('1970-01-01 00:00:00', '%Y-%m-%d %H:%M:%S');
+my $t_foo  = Time::Piece -> strptime('2017-01-24 15:48:25', '%Y-%m-%d %H:%M:%S');
 
-$t_ = $t2 - $t1;
+my $secs_since_1970 = $t_foo - $t_1970;
 
-say "Seconds between: ", $t_;
+say "Seconds between: ", $secs_since_1970;
 #
 # Seconds between: 1485272905
+
+# ---------------------------------
+
+my $t_bar = $t_1970 + $secs_since_1970;
+print $t_bar -> ymd() . ' ' . $t_bar -> hms() . "\n";
+#
+# 2017-01-24 15:48:25
