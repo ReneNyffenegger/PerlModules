@@ -23,8 +23,10 @@ my $t_foo  = Time::Piece -> strptime('2017-01-24 15:48:25', '%Y-%m-%d %H:%M:%S')
 my $secs_since_1970 = $t_foo - $t_1970;
 
 say "Seconds between: ", $secs_since_1970;
+say "   Epoch:        ", $t_foo -> epoch;
 #
 # Seconds between: 1485272905
+#    Epoch:        1485272905
 
 # ---------------------------------
 
