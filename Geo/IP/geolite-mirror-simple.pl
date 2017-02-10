@@ -42,7 +42,9 @@ my $dl_path = 'http://geolite.maxmind.com/download/geoip/database/';
 chdir $download_dir or die $!;
 for my $f ( keys %mirror ) {
     my $rc = mirror( $dl_path . $mirror{$f}, $f );
-    next if $rc == RC_NOT_MODIFIED;
+    if ($rc == RC_NOT_MODIFIED) {
+       print "$mirror{$f}: RC_NOT_MODIFIED\n";
+    }
     if ( $rc == RC_OK ) {
         ( my $outfile = $f ) =~ s/\.gz$//;
         open my $in,  '<:gzip', $f       or die $!;
