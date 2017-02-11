@@ -3,7 +3,7 @@ use strict;
 
 use Digest::MD5;
 
-my $md5 = new Digest::MD5;
+my $md5 = Digest::MD5->new;
 
 open (my $fh, '<', 'File/script.pl') or die;
 binmode $fh;

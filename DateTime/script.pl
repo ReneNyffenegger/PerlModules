@@ -4,8 +4,8 @@ use strict;
 use DateTime;
 
 
-my $date_1 = new DateTime (year => 2014, month => 7, day => 5);
-my $date_2 = new DateTime (year => 2014, month => 7, day =>15);
+my $date_1 = DateTime->new(year => 2014, month => 7, day => 5);
+my $date_2 = DateTime->new(year => 2014, month => 7, day =>15);
 
 #  Calculate Δ
 #    delta_tays() returns a DateTime::Duration object

@@ -7,7 +7,7 @@ use YAPE::HTML;
 
 my $html = read_file('../../HTML/test_01.html');
 
-my $p = new YAPE::HTML($html, 0);
+my $p = YAPE::HTML->new($html, 0);
 
 my $indent_ = 0;
 
@@ -20,7 +20,7 @@ while (my $chunk = $p->next) {
     $indent_ ++;
   }
   elsif ($chunk->type eq 'closetag') {
-    
+
     $indent_ --;
 
     print '  ' x $indent_ . "Close-Tag, ", $chunk->{TAG}, "\n";

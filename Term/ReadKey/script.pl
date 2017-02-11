@@ -10,7 +10,7 @@ my $normal_read_using_getc =  0;
 my $non_blocked_read       = -1;
 my $wait_2_secs            =  5;
 
-ReadMode ($raw_mode); 
+ReadMode ($raw_mode);
 
 my $key;
 my $cnt = 0;

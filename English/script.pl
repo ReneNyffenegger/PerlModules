@@ -5,5 +5,5 @@ use English;
 
 use feature 'say';
 
-say '$0  PROGRAM_NAME: ', $PROGRAM_NAME; 
-say '$^V PERL_VERSION: ', $PERL_VERSION; 
+say '$0  PROGRAM_NAME: ', $PROGRAM_NAME;
+say '$^V PERL_VERSION: ', $PERL_VERSION;

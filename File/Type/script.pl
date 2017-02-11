@@ -7,7 +7,7 @@ use File::Type;
 use File::Spec;
 use Cwd;
 
-my $ft = new File::Type;
+my $ft = File::Type->new;
 
 # Hmmm... Why does the .txt return «application/octet-stream»?
 print $ft -> mime_type ($0                                            ), "\n"; # application/x-perl

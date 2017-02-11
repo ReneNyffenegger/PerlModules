@@ -3,7 +3,7 @@ use warnings;
 use strict;
 use Net::FTP;
 
-my $ftp = new Net::FTP(
+my $ftp = Net::FTP->new(
   $ENV{TQ84_RN_FTP_HOST},
   Debug => 1,
   Passive=>1

@@ -12,7 +12,7 @@ use threads::shared;
 my $nl = "\x0d\x0a";
 
 
-my $server = new IO::Socket::INET (
+my $server = IO::Socket::INET->new(
     LocalHost   => 'localhost',
     LocalPort   =>  2808,
     Proto       => 'tcp',

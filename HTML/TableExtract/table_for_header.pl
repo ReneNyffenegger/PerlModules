@@ -7,7 +7,7 @@ use File::Slurp;
 
 my $html = read_file('table_for_header.html');
 
-my $te = HTML::TableExtract -> new (
+my $te = HTML::TableExtract->new(
    headers => ['Head 2', 'Head 3', 'Head 1'] # note: tr with «Head n» won't be displayed, col-2 will be printed after col-3.
 );
 

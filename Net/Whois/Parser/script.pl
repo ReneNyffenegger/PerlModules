@@ -8,7 +8,7 @@ use strict;
 use Net::Whois::Parser;
 $Net::Whois::Parser::GET_ALL_VALUES = 1;
 
-my $domain = shift or die;  
+my $domain = shift or die;
 
 my $whois = parse_whois(domain => $domain) or die;
 

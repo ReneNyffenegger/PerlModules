@@ -7,7 +7,7 @@ use Geo::Coder::HostIP;
 my $ipnr = shift or die;
 
 # I can even call it menlo …
-my $menlo     = new Geo::Coder::HostIP; # default Server: www.hostip.info
+my $menlo     = Geo::Coder::HostIP->new; # default Server: www.hostip.info
 
 
 #  Get the coordinates.

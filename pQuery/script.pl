@@ -43,5 +43,5 @@ print "style: ", $p -> find('style')->text, "\n";
 
 # Note: with ...->html, the enclosing <table>..</table> elements wouldn't
 #       be printed:
-print "table: ", $p -> find('table')->toHtml;      
+print "table: ", $p -> find('table')->toHtml;
 

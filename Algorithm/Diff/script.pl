@@ -20,7 +20,7 @@ my @seq_B = ();
 #  new computes the smallest set of additions and deletions
 #  necessary to turn the first sequence into the second.
 #
-my $diff = new Algorithm::Diff(\@seq_a, \@seq_b);
+my $diff = Algorithm::Diff->new(\@seq_a, \@seq_b);
 
 while (my $hunk =   #  A hunk represents a contiguous section
                     #  of items which should be added, deleted
@@ -36,11 +36,11 @@ while (my $hunk =   #  A hunk represents a contiguous section
   #  ----------------------------------
 
      print "$hunk: $hunk ";
-   
+
      print "Diff: ", $diff->Diff(), " ";
-   
+
      print "Same " if $diff->Same();
-   
+
      print "\n";
 
      my @items_a = $diff -> Items(1);

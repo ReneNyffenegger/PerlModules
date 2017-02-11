@@ -5,7 +5,7 @@ use feature 'say';
 use Unicode::String qw(utf8 latin1 utf16le);
 use Data::Translate;
 
-my $d = new Data::Translate;
+my $d = Data::Translate->new;
 
 my $x = "René";
 

@@ -8,7 +8,7 @@ use GD;
 
 GD::Image -> trueColor(1);
 
-my $image = new GD::Image('white-red-green-blue.png') or die;
+my $image = GD::Image->new('white-red-green-blue.png') or die;
 
 for (my $x=0; $x<4; $x++) {
   my $index = $image->getPixel($x, 0);

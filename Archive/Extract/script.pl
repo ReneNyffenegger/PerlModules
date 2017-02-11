@@ -14,7 +14,7 @@ my $zip_file = shift;
 
 my $temp_dir = tmpdir . '/unzipped-by-Archive-Extract';
 
-my $unzip = new Archive::Extract (archive => $zip_file);
+my $unzip = Archive::Extract->new(archive => $zip_file);
 
 my $ok = $unzip->extract(to => $temp_dir);
 

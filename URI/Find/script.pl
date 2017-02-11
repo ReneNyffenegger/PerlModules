@@ -2,7 +2,7 @@ use warnings;
 use strict;
 use URI::Find;
 
-my $linkifyer = new URI::Find (sub {
+my $linkifyer = URI::Find->new(sub {
     my $uri       = shift;
     my $orig_uri  = shift;
 
@@ -28,6 +28,6 @@ close $html;
 
 
 __DATA__
-Here are a few links: http://www.renenyffenegger.ch, http://www.google.com, and http://www.github.com. Note 
+Here are a few links: http://www.renenyffenegger.ch, http://www.google.com, and http://www.github.com. Note
 the trailing dot after github.org.
 

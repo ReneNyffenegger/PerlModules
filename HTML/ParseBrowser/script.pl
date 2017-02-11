@@ -10,7 +10,7 @@ while (my $agent = <$user_agent_strings_h>) {
 
   chomp $agent;
 
-  my $parser = new HTML::ParseBrowser ($agent);
+  my $parser = HTML::ParseBrowser->new($agent);
 
   my $version = $parser -> v        || '?';
   my $os      = $parser -> os       || '?';

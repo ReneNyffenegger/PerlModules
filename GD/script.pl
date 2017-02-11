@@ -2,11 +2,11 @@ use warnings;
 use strict;
 use GD;
 
-my $img = new GD::Image(300, 300);
+my $img = GD::Image->new(300, 300);
 
 my $white = $img->colorAllocate( 255, 255, 255);
-my $grey  = $img->colorAllocate( 100, 100, 100);       
-my $red   = $img->colorAllocate( 255,   0,   0);      
+my $grey  = $img->colorAllocate( 100, 100, 100);
+my $red   = $img->colorAllocate( 255,   0,   0);
 my $blue  = $img->colorAllocate(   0,   0, 255);
 my $green = $img->colorAllocate(   0, 255,   0);
 my $trans = $img->colorAllocate(   1,   1,   1);

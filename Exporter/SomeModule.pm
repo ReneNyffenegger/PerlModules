@@ -14,7 +14,7 @@ $VERSION      = 1;
 %EXPORT_TAGS  = ('all'  => [ ( @EXPORT, @EXPORT_OK) ],
                  'some' => [ qw(ok_one ok_three exp_two) ]
                 );
-                 
+
 
 sub exp_one  { return 'exp_one'; }
 sub exp_two  { return 'exp_two'; }

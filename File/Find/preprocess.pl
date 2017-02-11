@@ -9,7 +9,7 @@ find({preprocess => \&preprocess,
      '../..');
 
 sub preprocess {
-# Only files or directories that match 
+# Only files or directories that match
 
   say "Preprocess $File::Find::dir: ", join " - ", @_;
   return grep { m/o/ } @_;

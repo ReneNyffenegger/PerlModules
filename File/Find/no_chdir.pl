@@ -8,10 +8,10 @@ use File::Spec;
 my $root_dir = shift;
 
 
-find({ no_chdir => 1, 
+find({ no_chdir => 1,
        wanted   => \&file_find_callback, },
        $root_dir);
-    
+
 
 
 sub file_find_callback { # {{{
@@ -22,5 +22,5 @@ sub file_find_callback { # {{{
     print "relative path      ". File::Spec -> abs2rel($File::Find::name, $root_dir), "\n";
 
     print "\n";
-    
+
 } # }}}

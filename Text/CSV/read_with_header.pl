@@ -6,7 +6,7 @@ use strict;
 
 use Text::CSV;
 
-my $csv = new Text::CSV ( {binary   => 1} ) or die Text::CSV -> error_diag();
+my $csv = Text::CSV->new( {binary   => 1} ) or die Text::CSV -> error_diag();
 
 open (my $file_handle, '<', 'data_with_header.csv') or die "could not open data.csv";
 

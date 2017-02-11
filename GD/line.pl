@@ -3,7 +3,7 @@ use strict;
 
 use GD;
 
-my $img = new GD::Image(110, 110);
+my $img = GD::Image->new(110, 110);
 
 my $grey  = $img -> colorAllocate(100, 100, 100);
 my $red   = $img -> colorAllocate(255,   0,   0);

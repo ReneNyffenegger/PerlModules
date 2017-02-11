@@ -4,13 +4,13 @@ use strict;
 use Image::Magick;
 use File::Slurp;
 
-my $image = new Image::Magick;
+my $image = Image::Magick->new;
 
 $image->Set( size => '500x500' );
 
 $image->ReadImage( 'xc:none' );
 
-my $source_code=read_file(__FILE__); 
+my $source_code=read_file(__FILE__);
 
 $image->Annotate(
     text      =>  $source_code,

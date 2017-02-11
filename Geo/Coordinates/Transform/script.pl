@@ -2,7 +2,7 @@ use warnings; use strict;
 use Geo::Coordinates::Transform;
 
 
-my $g = new Geo::Coordinates::Transform();
+my $g = Geo::Coordinates::Transform->new();
 
 
 printf "%s\n", @{$g->cnv_to_dms([ 20.5     ])}[0];   # 20 30 0.00000

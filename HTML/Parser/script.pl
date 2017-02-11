@@ -1,9 +1,9 @@
 use warnings;
 use strict;
 
-use       HTML::Parser ;
+use HTML::Parser;
 
-my $p = new HTML::Parser (
+my $p = HTML::Parser->new(
   start_h       => [\&start_tag  , 'tag, attr, attrseq, text' ],
   end_h         => [\&end_tag    , 'tag'                      ],
   text_h        => [\&text       , 'text'                     ],
@@ -15,7 +15,7 @@ my $p = new HTML::Parser (
 
 
 my $indent_ = 0;
- 
+
 $p->parse_file("../test_01.html") or die;
 
 sub text {

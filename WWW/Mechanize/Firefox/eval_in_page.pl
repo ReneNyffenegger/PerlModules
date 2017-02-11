@@ -2,7 +2,7 @@ use warnings;
 use strict;
 use WWW::Mechanize::Firefox;
 
-my $mech = new WWW::Mechanize::Firefox (
+my $mech = WWW::Mechanize::Firefox->new(
   launch   =>'C:\Program Files\Mozilla Firefox\firefox.exe',
 );
 

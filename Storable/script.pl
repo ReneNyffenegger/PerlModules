@@ -15,7 +15,7 @@ unless (-e $stored_file) {
       one => 1,
       two => 2
     }
-  ); 
+  );
 
   nstore(\%data, $stored_file);
   exit 0;
