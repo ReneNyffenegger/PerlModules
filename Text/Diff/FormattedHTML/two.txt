@@ -1,0 +1,8 @@
+The first two lines
+are equal in both files.
+The third line has a change.
+This line is missing in the other file
+This line is the 4th line in in.1 and the 5th ilne in in.2
+  demonstrating whitespace
+  spaces  are differning in  this line
+The final line is equal.
