@@ -9,7 +9,7 @@ my $username = shift or die;
 my $password = shift or die;
 my $path     = shift or die;
 
-my $ftp = new Net::FTP($host) or die "Could not connect to $host";
+my $ftp = Net::FTP->new($host) or die "Could not connect to $host";
 
 $ftp->login($username, $password) or die "Could not login as $username";
 $ftp->cwd($path);

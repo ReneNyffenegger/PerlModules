@@ -3,7 +3,7 @@ use strict;
 
 use Text::TabularDisplay;
 
-my $table = new Text::TabularDisplay( ('Column one', 'Column two', 'Column three'));
+my $table = Text::TabularDisplay->new( ('Column one', 'Column two', 'Column three'));
 
 $table -> add ( 'Foo'    , 'Bar'    , 'Baz'  );
 $table -> add (  111     ,  222     ,  333   );

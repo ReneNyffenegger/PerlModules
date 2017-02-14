@@ -8,7 +8,7 @@ use File::Basename;
 
 
 my $dest_file = tmpdir() . '\archive.zip';
-my $zip = Archive::Zip -> new;
+my $zip = Archive::Zip->new;
 # print dirname($0), "\n";
 
 my $directory_to_zip = File::Spec->catdir($0, '../../..');
@@ -17,7 +17,7 @@ my $directory_to_zip = File::Spec->catdir($0, '../../..');
 
 $zip -> addTree (
   $directory_to_zip,
-  '', 
+  '',
   sub { $_ !~ /\.git\b/ }   # exclude «.git» directory
 );
 

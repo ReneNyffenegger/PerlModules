@@ -15,9 +15,9 @@ unless (-e $yaml_file) {
       one => 1,
       two => 2
     }
-  ); 
+  );
 
-  my $yaml = new YAML::Tiny (\%data);
+  my $yaml = YAML::Tiny->new(\%data);
 
   $yaml->write($yaml_file);
 

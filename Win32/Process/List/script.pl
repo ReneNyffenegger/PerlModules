@@ -2,7 +2,7 @@ use warnings;
 use strict;
 use Win32::Process::List;
 
-my $procs = new Win32::Process::List;
+my $procs = Win32::Process::List->new;
 
 my $some_proc_name = 'explorer.exe';
 

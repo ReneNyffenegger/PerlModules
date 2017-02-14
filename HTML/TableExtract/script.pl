@@ -7,7 +7,7 @@ use File::Slurp;
 
 my $html = read_file('tables.html');
 
-my $te = new HTML::TableExtract;
+my $te = HTML::TableExtract->new;
 
 $te -> parse($html);
 

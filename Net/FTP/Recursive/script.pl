@@ -6,7 +6,7 @@ if (@ARGV != 4) {
   die "I need host, username, password  remote dir";
 }
 
-my $ftp = new Net::FTP::Recursive(shift) or die;
+my $ftp = Net::FTP::Recursive->new(shift) or die;
 $ftp -> login(shift, shift) or die;
 $ftp -> cwd(shift);
 

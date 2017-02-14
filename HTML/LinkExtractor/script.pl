@@ -28,7 +28,7 @@ my $html = <<HTML;
 </html>
 HTML
 
-my $extractor = new HTML::LinkExtractor(\&link_found, $base_url);
+my $extractor = HTML::LinkExtractor->new(\&link_found, $base_url);
 $extractor -> parse(\$html);
 
 sub link_found {

@@ -1,7 +1,7 @@
 use XML::LibXML;
 use strict;
 use warnings;
-my $parser = new XML::LibXML;
+my $parser = XML::LibXML->new;
 
 my $xmlp= $parser -> parse_file("stackoverflow_17722520.xml");
 my $rootel = $xmlp -> getDocumentElement();
@@ -30,7 +30,7 @@ foreach my $child(@kids) {
         my $name = $at -> getName();
         my $value = $at -> getValue();
         print "   ${name}[$value]\n ";
-  
+
     }
   }
 }

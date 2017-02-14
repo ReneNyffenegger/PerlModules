@@ -7,7 +7,7 @@ my $xml_file_name = shift || 'test.xml';
 
 open my $xml_file_h, '<', $xml_file_name;
 
-my $xml_parser = new XML::Parser(Style => 'Stream');
+my $xml_parser = XML::Parser->new(Style => 'Stream');
 
 $xml_parser -> setHandlers (
    Start     => \&    start_element,
@@ -23,7 +23,7 @@ sub start_element {
 
   my($parseinst, $element, %attributes) = @_;
 
-  #print "  parseinst: $parseinst\n"; 
+  #print "  parseinst: $parseinst\n";
   print "start element: [$element]\n";
 
   foreach my $attribute (keys %attributes) {
@@ -53,7 +53,7 @@ sub char_data {
   $data =~ s/{amp}/&/;
 
   print "character data:\n";
-  print "  data: $data\n"; 
+  print "  data: $data\n";
 
   print "\n";
 }

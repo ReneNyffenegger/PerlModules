@@ -6,7 +6,7 @@ use feature 'say';
 use Math::BigInt;
 use Math::BigInt::Named;
 
-my $num = new Math::BigInt::Named (42);
+my $num = Math::BigInt::Named->new(42);
 
 say $num -> name();
 say $num -> name(language => 'de');

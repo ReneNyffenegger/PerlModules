@@ -3,7 +3,7 @@ use strict;
 
 use Win32::GUI();
 
-my $wnd = new Win32::GUI::Window (-name=>'myWindow', -text=> 'the Window', -width => 300, -height => 200);
+my $wnd = Win32::GUI::Window->new(-name=>'myWindow', -text=> 'the Window', -width => 300, -height => 200);
 $wnd -> AddLabel(-text => "Hello World");
 $wnd -> Show();
 

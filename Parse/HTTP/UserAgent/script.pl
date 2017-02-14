@@ -10,7 +10,7 @@ while (my $agent = <$user_agent_strings_h>) {
   chomp $agent;
 
   eval {
-    my $parser = new Parse::HTTP::UserAgent($agent);
+    my $parser = Parse::HTTP::UserAgent->new($agent);
 
     if (!$seen{$parser->name}{$parser->os}++) {
       printf "%-30s %-50s $agent\n", $parser->name, $parser->os;

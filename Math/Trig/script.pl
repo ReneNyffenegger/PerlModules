@@ -47,7 +47,7 @@ sub atan_atan2_test {
    my $atan2 = atan2($y,$x);
 
    printf "rad = % 10.9f   atan = % 10.9f    atan2 = % 10.9f | % 10.9f\n", $rad, $atan, $atan2, $atan >= 0 ? $atan : $atan + 2 * pi;
-   
+
 
 }
 

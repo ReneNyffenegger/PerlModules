@@ -7,7 +7,7 @@ use File::LibMagic;
 use File::Spec;
 use Cwd;
 
-my $lm = new File::LibMagic;
+my $lm = File::LibMagic->new;
 
 print $lm -> describe_filename ($0         ), "\n"; # a /usr/bin/perl script, ASCII text executable
 print $lm -> describe_filename ('README.md'), "\n"; # ASCII text

@@ -15,7 +15,7 @@ printf("\nNow, it is   %02d:%02d:%02d %2d.%02d.%4d  (%s)\n",
         Date::Calc::Day_of_Week_to_Text(localtime->wday));
 
 
-# ---- 
+# ----
 
 print "\n";
 

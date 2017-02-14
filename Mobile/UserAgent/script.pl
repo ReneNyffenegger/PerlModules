@@ -13,7 +13,7 @@ while (my $agent = <$user_agent_strings_h>) {
 
   chomp $agent;
 
-  my $parser = new Mobile::UserAgent ($agent);
+  my $parser = Mobile::UserAgent->new($agent);
 
   unless ($parser -> success) {
     add_to_examples('unsuccessful', $agent);

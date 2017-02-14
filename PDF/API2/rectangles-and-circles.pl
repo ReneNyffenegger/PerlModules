@@ -6,7 +6,7 @@ use PDF::API2;
 
 use constant mm => 25.4 / 72;
 
-my $pdf  = new PDF::API2;
+my $pdf  = PDF::API2->new;
 my $page = $pdf  -> page;
 my $gfx  = $page -> gfx;
 

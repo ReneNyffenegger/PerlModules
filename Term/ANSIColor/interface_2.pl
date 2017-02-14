@@ -19,7 +19,7 @@ for my $background_color (@predefined_colors) {
 # print color "bright_$predefined_color";
 # print "bright $predefined_color\n";
 
-} print "\n" }} 
+} print "\n" }}
 
 print color "reset";
 

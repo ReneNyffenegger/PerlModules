@@ -3,7 +3,7 @@ use strict;
 
 use Text::CSV;
 
-my $csv = new Text::CSV ( {binary   => 1, sep_char => ';'} ) or die Text::CSV -> error_diag();
+my $csv = Text::CSV->new( {binary   => 1, sep_char => ';'} ) or die Text::CSV -> error_diag();
 
 open (my $file_handle, '<', 'data.csv') or die "could not open data.csv";
 

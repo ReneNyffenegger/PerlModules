@@ -22,9 +22,9 @@ parse_date('now'       );  # 2012102508:00:00
 my $now   = ParseDate('now'   );
 my $then  = ParseDate('8:13am');
 
-#  %s extracts seconds since Jan 1st 1970. So it's possible to get the difference 
+#  %s extracts seconds since Jan 1st 1970. So it's possible to get the difference
 #  of two dates in seconds:
-print "Difference between $now and $then " . (UnixDate($then, "%s") - UnixDate($now, "%s")) . " seconds\n"; 
+print "Difference between $now and $then " . (UnixDate($then, "%s") - UnixDate($now, "%s")) . " seconds\n";
 
 
 print UnixDate(ParseDate("first Saturday in July 2013"), "\nFirst Saturday of the month July 2013 is: %B %E, %Y.\n");

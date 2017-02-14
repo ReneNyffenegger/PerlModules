@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-use Encode::Guess; 
+use Encode::Guess;
 
 my $data_latin1 = "Ren\xc9";
 my $data_utf8   = "Ren\x{c389}";

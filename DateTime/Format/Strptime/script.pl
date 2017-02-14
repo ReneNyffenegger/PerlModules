@@ -3,7 +3,7 @@ use strict;
 
 use DateTime::Format::Strptime;
 
-my $format = new DateTime::Format::Strptime (
+my $format = DateTime::Format::Strptime->new(
                pattern => '%F'   #  %Y-%m-%d
              );
 

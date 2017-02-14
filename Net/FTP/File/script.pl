@@ -10,7 +10,7 @@ my $username      = shift or die;
 my $password      = shift or die;
 my $test_root_dir = shift or die;
 
-my $ftp = new Net::FTP($hostname, Passive => 1, Debug=>0) or die "Could not open connection to $hostname";
+my $ftp = Net::FTP->new($hostname, Passive => 1, Debug=>0) or die "Could not open connection to $hostname";
 
 $ftp -> login($username, $password) or die "Could not login";
 
@@ -32,7 +32,7 @@ for my $i  (1 .. 9) {
 "This is
 file number $i
 ");
-  
+
   print "putting $i.txt\n";
   $ftp -> put("/tmp/$i.txt");
 

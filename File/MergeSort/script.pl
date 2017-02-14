@@ -4,7 +4,7 @@ use strict;
 
 use File::MergeSort;
 
-my $sort = new File::MergeSort (
+my $sort = File::MergeSort->new(
    [ 'input-1', 'input-2', 'input-3', 'input-4'],
    sub {
        my $line = shift;

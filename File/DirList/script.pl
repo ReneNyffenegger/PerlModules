@@ -11,7 +11,7 @@ my $entries = File::DirList::list('c:/temp',
   'n',# sort by name
   $noLinks,
   $hideDotFiles
-); 
+);
 
 
 # the name is at position 13

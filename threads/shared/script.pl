@@ -30,6 +30,6 @@ sub thr { # {{{
     $bar ++;
 
     print "foo: $foo, bar: $bar\n";
-    
+
 
 } # }}}

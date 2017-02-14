@@ -13,7 +13,7 @@ while (my $agent = <$user_agent_strings_h>) {
 
   chomp $agent;
 
-  my $parser = new HTTP::DetectUserAgent ($agent);
+  my $parser = HTTP::DetectUserAgent->new($agent);
 
 
   if (my $val = $parser -> type) {
@@ -69,9 +69,9 @@ sub add_to_examples_val {
 # sub add_to_examples {
 #   my $name  = shift;
 #   my $agent = shift;
-# 
+#
 #   $examples{$name} = [] unless exists $examples{$name};
-# 
+#
 #   if (@{$examples{$name}} <= 3) {
 #     push @{$examples{$name}}, $agent;
 #   }

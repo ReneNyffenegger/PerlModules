@@ -9,7 +9,7 @@ use Net::WhoisNG;
 
 my $addr = shift or die;
 
-# my $whois = new Net::WhoisNG($addr) or die;
+# my $whois = Net::WhoisNG->new($addr) or die;
 
 $whois -> lookUp() or die;
 

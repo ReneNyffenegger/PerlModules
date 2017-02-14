@@ -5,12 +5,12 @@ $| = 1; # Autoflush
 use IO::Socket;
 use IO::Select;
 
-my $socket = new IO::Socket::INET (
+my $socket = IO::Socket::INET->new(
                  PeerAddr    => 'localhost',
                  PeerPort    =>  2808,
                  Proto       => 'tcp',
                  Timeout     =>  1
-             ) 
+             )
              or die "Could not connect";
 
 
@@ -21,18 +21,18 @@ $select -> add ($socket);
 
 while (1) {
   while (my @ready = $select -> can_read) {
-  
+
     foreach my $fh (@ready) {
-  
+
        if ($fh == $socket) {
           my $buf = <$socket>;
           print $buf;
        }
        else {
-  
+
          my $buf = <STDIN>;
          print $socket $buf
-  
+
        }
     }
   }

@@ -3,7 +3,7 @@ use warnings; use strict;
 use Sys::Info::OS;
 use Time::localtime;
 
-my $os_info = new Sys::Info::OS;
+my $os_info = Sys::Info::OS->new;
 
 printf "OS name:    %s\n", $os_info -> name;
 printf "OS version: %s\n", $os_info -> version;

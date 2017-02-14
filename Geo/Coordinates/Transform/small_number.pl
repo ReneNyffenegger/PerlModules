@@ -2,7 +2,7 @@ use warnings; use strict;
 use Geo::Coordinates::Transform;
 
 
-my $g = new Geo::Coordinates::Transform();
+my $g = Geo::Coordinates::Transform->new();
 
 
 print  "\n\n";

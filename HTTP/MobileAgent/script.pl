@@ -13,7 +13,7 @@ while (my $agent = <$user_agent_strings_h>) {
 
   chomp $agent;
 
-  my $parser = new HTTP::MobileAgent ($agent);
+  my $parser = HTTP::MobileAgent->new($agent);
 
   if ($parser -> gps_compliant) {
     add_to_examples('gps compliant', $agent);

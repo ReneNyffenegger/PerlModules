@@ -4,7 +4,7 @@ use feature 'say';
 
 use Data::Translate;
 
-my $t = new Data::Translate;
+my $t = Data::Translate->new;
 
 my $ae = 'ä';
 

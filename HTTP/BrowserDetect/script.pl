@@ -13,7 +13,7 @@ while (my $agent = <$user_agent_strings_h>) {
 
   chomp $agent;
 
-  my $parser = new HTTP::BrowserDetect ($agent);
+  my $parser = HTTP::BrowserDetect->new($agent);
 
 
   if (my $val = $parser -> browser) {

@@ -19,7 +19,7 @@ Content-type: text/plain
 
 Hello Saurer
 
-How are you? 
+How are you?
 
 Cheers,
 Beleidigte Leberwurst
@@ -31,7 +31,7 @@ VGhpcyBtZXNzYWdlIGlzIGdvaW5nIHRvIGJlIGVuY29kZWQgaW4gYmFzZSA2NA==
 --SOME_RANDOM_BOUNDARY--
 END_2822
 
-my $email_mime = new Email::MIME($rfc_2822);
+my $email_mime = Email::MIME->new($rfc_2822);
 
 foreach my $header_item (qw(Subject From To Date)) {
   printf "%-8s: %-30s\n", $header_item, $email_mime->header($header_item);

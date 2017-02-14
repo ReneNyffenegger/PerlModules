@@ -40,7 +40,7 @@ print "name:   $name\npath:   $path\nsuffix: $suffix\n";
 #
 # name:   script.pl
 # path:   foo/bar/
-# suffix: 
+# suffix:
 
 print "\n  With Suffixlist,  excluding pl\n\n";
 ($name, $path, $suffix) = fileparse($file, ('.bat', '.exe'));
@@ -48,7 +48,7 @@ print "name:   $name\npath:   $path\nsuffix: $suffix\n";
 #
 # name:   script.pl
 # path:   foo/bar/
-# suffix: 
+# suffix:
 
 print "\n  With Suffixlist, including pl\n\n";
 ($name, $path, $suffix) = fileparse($file, ('.bat', '.exe', '.pl'));
@@ -61,7 +61,7 @@ print "name:   $name\npath:   $path\nsuffix: $suffix\n";
 print "\n  With Suffixlist and regular expression\n\n";
 ($name, $path, $suffix) = fileparse($file, qr/\.[^.]*$/);
 print "name:   $name\npath:   $path\nsuffix: $suffix\n";
-# 
+#
 # name:   script
 # path:   foo/bar/
 # suffix: .pl

@@ -15,7 +15,7 @@ my $xml_string = qq{<?xml version="1.0"?>
 </root-node>
 };
 
-my $xml_parser = new XML::Parser;
+my $xml_parser = XML::Parser->new;
 
 $xml_parser -> setHandlers (
    Start     => \&    start_element,
@@ -30,7 +30,7 @@ sub start_element {
 
   my($parseinst, $element, %attributes) = @_;
 
-  #print "  parseinst: $parseinst\n"; 
+  #print "  parseinst: $parseinst\n";
   print "start element: [$element]\n";
 
   foreach my $attribute (keys %attributes) {
@@ -43,7 +43,7 @@ sub start_element {
 sub end_element {
   my($parseinst, $element, %attributes) = @_;
 
-  #print " parseinst: $parseinst\n"; 
+  #print " parseinst: $parseinst\n";
   print "end element: [$element]\n";
 
 # It seems as though attributes will be always
@@ -60,7 +60,7 @@ sub char_data {
   $data =~ s/{amp}/&/;
 
   print "character data:\n";
-  print "  data: $data\n"; 
+  print "  data: $data\n";
 
   print "\n";
 }

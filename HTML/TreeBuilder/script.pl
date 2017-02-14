@@ -3,7 +3,7 @@ use strict;
 
 use HTML::TreeBuilder;
 
-my $htmlTree = new HTML::TreeBuilder;
+my $htmlTree = HTML::TreeBuilder->new;
 
 # $htmlTree -> implicit_tags(1);
 
