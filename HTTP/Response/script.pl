@@ -8,7 +8,7 @@ use LWP::UserAgent;
 my $user_agent = LWP::UserAgent->new;
 
 # LWP::UserAgent's get function returns a HTTP::Response object:
-my $http_response = $user_agent->get('https://raw.githubusercontent.com/ReneNyffenegger/PerlModules/master/HTTP/Daemon/script.pl');
+my $http_response = $user_agent->get('https://raw.githubusercontent.com/ReneNyffenegger/PerlModules/master/HTTP/Response/script.pl');
 say ref $http_response;
 #
 # HTTP::Response
