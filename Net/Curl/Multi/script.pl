@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+#
+#   Modelled after ikegami's answer: http://stackoverflow.com/a/36899413/180275
+#
 use warnings;
 use strict;
 
