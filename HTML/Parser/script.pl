@@ -5,6 +5,7 @@ use strict;
 use HTML::Parser;
 
 my $p = HTML::Parser->new(
+# api_version   => 3,
   start_h       => [\&start_tag  , 'tag, attr, attrseq, text' ],
   end_h         => [\&end_tag    , 'tag'                      ],
   text_h        => [\&text       , 'text'                     ],
@@ -33,6 +34,10 @@ sub comment {
 sub start_tag {
     my ($tag, $attr, $attrseq, $text) = @_;
     print '  ' x $indent_ . "Tag: $tag $text\n";
+    for my $attrName (@$attrseq) {
+      print '  ' x $indent_ . " $attrName=$attr->{$attrName}\n";
+    }
+    print "\n";
     $indent_ ++;
 }
 
