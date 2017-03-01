@@ -8,8 +8,14 @@ use warnings;
 use WWW::Wikipedia;
 use File::Slurp;
 
-my $wiki  = WWW::Wikipedia->new();
-my $entry = $wiki->search('New York');
+my $wiki  = WWW::Wikipedia->new(language => 'de');
+my $entry = $wiki->search('Freienstein');
+
 
 binmode STDOUT, ':utf8';
 print $entry->text();
+
+print "Related entries:\n";
+for my $related ($entry->related) {
+  print "  $related\n";
+}
