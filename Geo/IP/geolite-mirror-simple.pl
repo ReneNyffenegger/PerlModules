@@ -46,6 +46,7 @@ for my $f ( keys %mirror ) {
        print "$mirror{$f}: RC_NOT_MODIFIED\n";
     }
     if ( $rc == RC_OK ) {
+       print "RC_OK: $f\n";
         ( my $outfile = $f ) =~ s/\.gz$//;
         open my $in,  '<:gzip', $f       or die $!;
         open my $out, '>',      $outfile or die $!;
