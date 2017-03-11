@@ -32,12 +32,18 @@ my @nodes = (
 
 );
 
+# First add the nodes in the sequence that we want them
+# returned if the final tree is traversed depth first:
+#
 for my $node (@nodes) {
   $tree_creator->addNode($node->{depth}, $node->{val});
 }
 
 my $tree = $tree_creator->getTree();
 
+# Then verify if they are actually returned in the
+# same order:
+#
 $tree->traverse (sub {
   my $node = shift;
 
