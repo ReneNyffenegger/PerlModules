@@ -22,7 +22,6 @@ my $tree_simple = $tree_creator->getTree();
 $tree_simple->traverse(sub {
   my $node = shift;
   print "  " x $node->getDepth() . $node->getNodeValue() . "\n";
-
 });
 
 sub start_tag {
@@ -36,6 +35,7 @@ sub end_tag {
 }
 sub text {
   my $text = shift;
+  $text =~ s/\s//g;
 
-  $tree_creator->addNode($depth, $text) if $depth >= 0;
+  $tree_creator->addNode($depth, $text) if $depth >= 0 and $text =~ /\w/;
 }
