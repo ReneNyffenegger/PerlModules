@@ -20,7 +20,7 @@ my $sth_sel = $dbh->prepare('select col from tq84_regexp where col regexp ?');
 
 searchRegexp('\d');
 searchRegexp('o');
-searchRegexp('o+');
+searchRegexp('(.)\\1');
 
 sub searchRegexp {
   my $regexp = shift;
