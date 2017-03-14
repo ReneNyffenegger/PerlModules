@@ -2,46 +2,52 @@
 use warnings;
 use strict;
 
-package RequestHeaderFilter; #_{
-
-use base qw(HTTP::Proxy::HeaderFilter);
-
-sub filter {
-  my ($self, $headers, $request) = @_;
-
-
-# printf "RequestHeaderFilter\n";
-# printf "  ref(headers): %s\n", ref($headers);  # HTTP::Headers
-# printf "  ref(request): %s\n", ref($request);  # HTTP::Request
-
-  printf "%s %s\n", $request->method, substr($request->uri, 0, 100);
-
-}
- #_}
-package ResponseBodyFilter; #_{
-
-use base qw(HTTP::Proxy::BodyFilter);
-
-sub filter {
-
-  my ($self, $dataref, $response, $protocol, $buffer) = @_;
-
-# printf "  ref(response) : %s\n",  ref($response);   # HTTP::Response
-# printf "  ref(protocol) : %s\n",  ref($protocol);   # LWP::Protocol::*
-
-  print $response->as_string();
-
-}
- #_}
-
-package main;
-
 use HTTP::Proxy;
+use HTTP::Proxy::HeaderFilter::simple;
+use HTTP::Proxy::BodyFilter::simple;
 
-my $proxy = HTTP::Proxy->new(port => 8888);
+my $filter_request_header = HTTP::Proxy::HeaderFilter::simple->new(sub { #_{
+  my ($self, $headers, $request) = @_;
+  printf "Request Header\n";
 
-$proxy->push_filter(request =>RequestHeaderFilter->new());
-$proxy->push_filter(response=>ResponseBodyFilter ->new());
+
+  printf "  %s %s\n", $request->method, substr($request->uri, 0, 100);
+
+}); #_}
+my $filter_response_header  = HTTP::Proxy::HeaderFilter::simple->new(sub { #_{
+
+  printf "Response Header\n";
+  my ($self, $headers, $response) = @_;
+
+
+# printf "  %s\n", $headers;
+  printf "  ref(headers ): %s\n", ref($headers ); # HTTP::Headers
+  printf "  ref(response): %s\n", ref($response); # HTTP::Response
+# printf "  headers: %s\n", $$headers;
+
+  print $headers->as_string();
+
+# print $response->as_string();
+
+}); #_}
+my $filter_response_body  = HTTP::Proxy::BodyFilter::simple->new(sub { #_{
+  my ($self, $dataref, $response, $protocol, $buffer) = @_;
+  printf "Response Body\n";
+
+# print $response->as_string();
+
+}); #_}
+
+my $proxy = HTTP::Proxy->new(
+    port => 8888       # default: 8080
+# , engine=>'NoFork'   # Threaded (probably for Windows), NoFork (probably for Windows), ScoreBoard, Legacy
+);
+
+print ref($proxy->engine), "\n";
+
+$proxy->push_filter(request =>$filter_request_header);
+$proxy->push_filter(response=>$filter_response_header);
+$proxy->push_filter(response=>$filter_response_body);
 
 
 $proxy->start;
