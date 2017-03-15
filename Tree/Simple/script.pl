@@ -21,6 +21,10 @@ die unless $child_1->isRoot();
 # Adding the child to the root tree:
 $root->addChild($child_1);
 
+# Alternatively, add a child as scalar. It will be
+# converted to a tree:
+$root->generateChild("1a");
+
 # $child_1 is no root tree anymore:
 die if $child_1->isRoot();
 
@@ -65,7 +69,7 @@ die unless  $child_2->getNodeValue() eq "2";
 die unless  $child_2->isLeaf();
 
 die if $child_2->getParent()->getChild(0)->getUID() ne $child_1->getUID();
-die if $child_1->getParent()->getChild(1)->getUID() ne $child_2->getUID();
+die if $child_1->getParent()->getChild(2)->getUID() ne $child_2->getUID();
 
 # Adding a child to $child_2 (Note the 2nd parameter in new)
 my $child_2_1 = Tree::Simple->new("2/1", $child_2);
@@ -83,11 +87,12 @@ die unless $child_2_1->getDepth() == 1;
 $root->insertChild(1, Tree::Simple->new('inserted'));
 
 # $root has now 3 children
-die unless $root->getChildCount() == 3;
+die unless $root->getChildCount() == 4;
 
 die unless $root->getChild(0)->getNodeValue() eq '1';
 die unless $root->getChild(1)->getNodeValue() eq 'inserted';
-die unless $root->getChild(2)->getNodeValue() eq '2';
+die unless $root->getChild(2)->getNodeValue() eq '1a';
+die unless $root->getChild(3)->getNodeValue() eq '2';
 
 die unless $root->getChild(0)->getIndex() == 0;
 die unless $root->getChild(1)->getIndex() == 1;
@@ -124,7 +129,7 @@ die unless $child_1_3->getNodeValue() eq '1/3';
 
 # More traversing the tree
 die unless $child_1_3->getParent()->getParent()->getNodeValue() eq 'The root';
-die unless $child_1_3->getParent()->getParent()->getChild(2)->getChild(0)->getNodeValue() eq '2/1';
+die unless $child_1_3->getParent()->getParent()->getChild(3)->getChild(0)->getNodeValue() eq '2/1';
 
 # Inserting multiple children at a specific index
 $child_1->insertChildren(2,
