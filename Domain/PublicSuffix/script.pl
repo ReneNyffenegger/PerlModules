@@ -20,3 +20,13 @@ sub print_root {
   printf "%-15s -> %s\n", $host, $suffix->get_root_domain($host);
 }
 
+# Output:
+# 
+# www.google.com  -> google.com
+# foo.co.uk       -> foo.co.uk
+# www.foo.bar.ch  -> bar.ch
+# www.foo.co.uk   -> foo.co.uk
+# www.foo.com.in  -> com.in
+# www.foo.com.tr  -> foo.com.tr
+# www.foo.com.br  -> foo.com.br
+# www.foo.com.cn  -> foo.com.cn
