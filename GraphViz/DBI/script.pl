@@ -58,6 +58,8 @@ sub create_erd {
 
   my $dbh = open_db();
 
+# $dbh -> do('PRAGMA foreign_keys = ON') if ($ENV{DBI_DSN} =~ /SQLite/i);
+
   open my $erd_fh, '>', 'erd.png' or die;
   print $erd_fh GraphViz::DBI->new($dbh)->graph_tables->as_png;
   close $erd_fh;
