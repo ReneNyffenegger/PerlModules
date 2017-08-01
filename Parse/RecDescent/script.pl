@@ -6,12 +6,12 @@ use Parse::RecDescent;
 my $grammar = q {
   
   operation  :  ident operator ident
-              {printf "Parsed operation: %s %s %s\n", $item[1], $item[2], $item [3];}
+              {printf "Parsed operation: 1st ident: %s %s %s\n", $item[1], $item[2], $item[3];}
 
   operator   : '+' | '-' | '*' | '/'
   
-  ident      :  char char_or_num(s)
-                { $item[1] . join "", @{$item[2]} }
+  ident      :  char char_or_num(s?) # s: one or more, s? zero or more
+               { $item[1] . join "", @{$item[2]} }
 
   char_or_num: char | num
 
@@ -20,13 +20,11 @@ my $grammar = q {
   char       :  /[a-zA-Z]/
 };
 
-my $parser = Parse::RecDescent->new($grammar);
+my $parser = Parse::RecDescent->new($grammar) or die "Bad grammar!";
 
-defined $parser->operation('Foo + Bar') or die "didn't match";
-defined $parser->operation('x10 / y15') or die "didn't match";
-defined $parser->operation('100 /  42') or die "didn't match";
+defined $parser->operation('Foo + Bar') or print "didn't match\n";
+defined $parser->operation('x10 / y15') or print "didn't match\n";
+defined $parser->operation('100 /  42') or print "didn't match\n"; # Doesn't match because operator requires ident's, not num's.
+defined $parser->operation('a   -  b ') or print "didn't match\n";
 
-__DATA__
-Parsed operation: Foo + Bar
-Parsed operation: x10 / y15
-didn't match at C:\github\PerlModules\Parse\RecDescent\script.pl line 27.
+print "\nUniversal token prefix pattern: >$Parse::RecDescent::skip<\n";  # \s*
