@@ -24,11 +24,11 @@ my $line_2 = $svg->line (
     id => 'line_2',
     x1 => 970, y1 =>  30,
     x2 =>  30, y2 => 570,
-    style=>{
-       'stroke'      =>'rgb(127, 127, 255)',
-       'stroke-width'=>  15
-    }
 );
+
+$line_2->STYLE(
+ 'stroke'      =>'rgb( 63, 127, 255)',
+ 'stroke-width'=> 15);
 
 my $svg_text = $svg -> xmlify;
 
