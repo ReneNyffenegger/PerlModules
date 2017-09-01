@@ -26,8 +26,18 @@ my $line;
 $line = <$out>; chomp $line; die unless $line eq 'ä';
 $line = <$out>; chomp $line; die unless $line eq 'ö';
 $line = <$out>; chomp $line; die unless $line eq 'ü';
+close $out;
+
+open ($out, '>:utf8', 'sel.out');
+$dbh = connect_db();
+$sth = $dbh->prepare('select * from utf8_test order by txt');
+$sth->execute;
+while (my ($val) = $sth->fetchrow_array) {
+  print $out "$val\n";
+}
+close $out;
 
 sub connect_db {
-  my $dbh = DBI->connect('dbi:SQLite:dbname=utf8.db') or die "Could not create utf8.db";
+  my $dbh = DBI->connect( 'dbi:SQLite:dbname=utf8.db', '', '', { sqlite_unicode => 1 } ) or die "Could not create utf8.db";
   return $dbh;
 }
