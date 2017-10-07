@@ -15,4 +15,4 @@ my $xml  = qq{
 my $xp = XML::XPath->new(xml => $xml);
 
 my $val = $xp->getNodeText('/root/abc[@id="bar"]');
-print "val = $val\n";
+print "val = $val\n"; # val = World
