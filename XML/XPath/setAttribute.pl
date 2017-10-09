@@ -8,7 +8,7 @@ my $xml  = qq{
 <root>
   <abc id='one'   desc='bla bla'  >Hello</abc>
   <abc id='two'   desc='yada yada'>World</abc>
-  <abc id='three' desc='etc.'     >World</abc>
+  <abc id='three' desc='etc.'     >42   </abc>
 </root>
 };
 
