@@ -19,7 +19,7 @@ my ($node) = $xp->findnodes('/root/abc[@id="two"]');
 my $newAttribute = XML::XPath::Node::Attribute->new('new', 'value');
 print $node->appendAttribute($newAttribute);
 
-my $attr_specialChars = XML::XPath::Node::Attribute->new('"foo<>bar"', '"one & two >= three"');
+my $attr_specialChars = XML::XPath::Node::Attribute->new('one-two-three', '"one & two >= three"');
 print $node->appendAttribute($attr_specialChars);
 
 print $xp->findnodes_as_string('/');
