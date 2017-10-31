@@ -35,6 +35,7 @@ $dbh -> sqlite_create_function ('call_counter', 0, sub {
   my $sth_sel = $dbh->prepare('
 select
   abc,
+      call_counter()      counter,
   sum(call_counter()) sum_counter
 from
   tab
@@ -44,5 +45,5 @@ group by
   $sth_sel -> execute;
 
 while (my $rec = $sth_sel->fetchrow_hashref) {
-  printf "%s %d\n", $rec->{abc}, $rec->{sum_counter};
+  printf "%s  %2d  %2d\n", $rec->{abc}, $rec->{counter}, $rec->{sum_counter};
 }
