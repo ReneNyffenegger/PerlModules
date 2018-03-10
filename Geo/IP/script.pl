@@ -20,9 +20,12 @@ my $cr = $city->record_by_addr($ipnr);
 # my $rec = $geo_ip->record_by_addr($ipnr);
 #
 # print join "\n", keys %{$rec};
-printf "City:      %s %s\n"     , $cr->{city}, $cr->{postal_code};
-printf "Region:    %s %s\n"     , $cr->{region}, $cr->{region_name};
-printf "Country:   %s (%s %s)\n", $cr->{country_name}, $cr->{country_code}, $cr->{country_code3};
-printf "Continent: %s\n"        , $cr->{continent_code};
-printf "lon/lat:   %s / %s\n"   , $cr->{longitude}, $cr->{latitude};
-printf "Metrocde:  %s\n"        , $cr->{metro_code};
+#
+# 2018-03-10 cr does not seem to be a hash reference anymore.
+#
+printf "City:      %s %s\n"     , $cr->city, $cr->postal_code;
+printf "Region:    %s %s\n"     , $cr->region, $cr->region_name;
+printf "Country:   %s (%s %s)\n", $cr->country_name, $cr->country_code, $cr->country_code3;
+printf "Continent: %s\n"        , $cr->continent_code;
+printf "lon/lat:   %s / %s\n"   , $cr->longitude, $cr->latitude;
+printf "Metrocde:  %s\n"        , $cr->metro_code;
