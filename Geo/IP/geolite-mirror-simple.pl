@@ -6,6 +6,8 @@
 #   Needed to download and or synchronize /usr/local/share/GeoIP
 #
 use strict;
+use warnings;
+
 our $VERSION = '0.02';
 use LWP::Simple qw/ mirror RC_NOT_MODIFIED RC_OK $ua /;
 use File::Copy qw/ mv /;
@@ -42,11 +44,8 @@ my $dl_path = 'http://geolite.maxmind.com/download/geoip/database/';
 chdir $download_dir or die $!;
 for my $f ( keys %mirror ) {
     my $rc = mirror( $dl_path . $mirror{$f}, $f );
-    if ($rc == RC_NOT_MODIFIED) {
-       print "$mirror{$f}: RC_NOT_MODIFIED\n";
-    }
+    next if $rc == RC_NOT_MODIFIED;
     if ( $rc == RC_OK ) {
-       print "RC_OK: $f\n";
         ( my $outfile = $f ) =~ s/\.gz$//;
         open my $in,  '<:gzip', $f       or die $!;
         open my $out, '>',      $outfile or die $!;
