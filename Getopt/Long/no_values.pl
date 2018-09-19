@@ -1,5 +1,7 @@
+#!/usr/bin/perl
+#
 #   The most simple options are the ones that take no values, that is: flags
-
+#
 use strict;
 use warnings;
 
