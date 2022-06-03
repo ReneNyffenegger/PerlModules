@@ -26,6 +26,3 @@ $smtp->datasend("first line\nsecond line\n");
 $smtp->dataend();
 
 $smtp->quit();
-
-
-
